@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title - CAP Study Guide</title>
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="/css/Wiki.css">
+
+  <!-- Load Web Component & Partial Modules -->
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="/js/footer.js"></script>
+  <script src="/js/partials.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header Web Component -->
+  <site-header></site-header>
+
+  <!-- Overall Wiki Container Layout -->
+  <div class="wiki-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sec">
+          <div class="sec-label">Page Navigation</div>
+          <ul class="wiki-nav-list">
+            <li><a href="#sec1" class="active">1. First Section</a></li>
+            <li><a href="#sec2">2. Second Section</a></li>
+            <li><a href="#sec3">3. Third Section</a></li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="sec">
+          <div class="sec-label">Quick Links</div>
+          <ul class="wiki-nav-list">
+            <li><a href="/pages/color-guard.html">Color Guard</a></li>
+            <li><a href="/pages/honor-guard.html">Honor Guard</a></li>
+            <li><a href="/pages/hga-cha.html">HGA / CHA</a></li>
+            <li><a href="/pages/equipment.html">Equipment</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Body -->
+    <main class="preview">
+      <div class="preview-label">
+        <span>Article Title Here</span>
+        <span style="font-size: 0.8rem; font-family: sans-serif; color: var(--wiki-muted);">Reference Subtitle</span>
+      </div>
+
+      <!-- Infobox (Optional) -->
+      <div class="wiki-infobox">
+        <div class="wiki-infobox-header">Topic Summary</div>
+        <div style="text-align:center; padding: 5px;">
+          <svg width="60" height="60" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="#002b66" stroke="#d4af37" stroke-width="3"/>
+          </svg>
+        </div>
+        <table style="width:100%; font-size:0.8rem;">
+          <tr><td><strong>Key 1:</strong></td><td>Value 1</td></tr>
+          <tr><td><strong>Key 2:</strong></td><td>Value 2</td></tr>
+        </table>
+      </div>
+
+      <!-- Introduction Paragraph -->
+      <p>Write your introduction text here...</p>
+
+      <!-- Table of Contents (Optional) -->
+      <div class="wiki-toc">
+        <div class="wiki-toc-title">Contents</div>
+        <ul>
+          <li><a href="#sec1">1. First Section</a></li>
+          <li><a href="#sec2">2. Second Section</a></li>
+          <li><a href="#sec3">3. Third Section</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 1 -->
+      <h2 id="sec1">1. First Section</h2>
+      <p>Add content for section 1 here.</p>
+
+      <!-- Section 2 -->
+      <h2 id="sec2">2. Second Section</h2>
+      <p>Add content for section 2 here.</p>
+
+      <!-- Section 3 -->
+      <h2 id="sec3">3. Third Section</h2>
+      <p>Add content for section 3 here.</p>
+
+    </main>
+  </div>
+
+  <!-- Site Footer Web Component -->
+  <site-footer></site-footer>
+
+</body>
+</html>

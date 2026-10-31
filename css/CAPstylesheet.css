@@ -1,0 +1,609 @@
+/* ===== GLOBAL SETUP ===== */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+:root {
+      --blue: #011489;
+	  --nav-blue: #103C9C;
+      --red: #BA0D2F;
+      --white: #FFFFFF;
+      --body: #F2F3F4;
+	  --nav-white: #e3e3e4;
+	  --nav-grey: #9EA1A1;
+      --text: #111111;
+      --grey: #373A3D;
+	  --dark-grey: #222527;
+    }
+
+html {
+	font-family: Ubuntu, Helvetica, sans-serif;
+	background-color: var(--body);
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ===== FULL-WIDTH BACKGROUND SECTIONS ===== */
+.full-width {
+	width: 100%;
+}
+
+.container-inner {
+	max-width: 1150px;
+	margin: 0 auto;
+}
+
+main {
+	flex: 1;
+}
+
+/* ===== HEADINGS ===== */
+h1,
+h2,
+h3,
+h5 {
+	margin: 0;
+	
+	font-weight: 700;
+}
+
+h1 {
+	font-family: "Rajdhani", sans-serif;
+	color: var(--blue);
+	font-size: 3rem;
+}
+
+h2 {
+	font-family: Ubuntu, sans-serif;
+	color: var(--red);
+	text-transform: capitalize;
+	font-size: 2.4rem;
+}
+
+h3 {
+	color: #808080;
+	font-size: 1.8rem;
+}
+
+h4 {
+	color: var(--blue);
+	font-size: 1.3rem;
+	margin-bottom: 2px;
+}
+
+h5 {
+	color: #f2f4f5;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+/* ===== ALERT BOX ===== */
+.note {
+	padding: 4px;
+	background-color: #808080;
+	color: white;
+}
+
+.alert {
+	padding: 10px;
+	background-color: #ff6600;
+	color: white;
+}
+
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.closebtn:hover {
+	color: black;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+	background-color: var(--blue);
+	position: relative;
+	overflow: visible;
+}
+
+nav .main-nav {
+	list-style: none;
+	text-transform: capitalize;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	gap: 1px; /* Space between main items */
+}
+
+nav .main-nav > li {
+	flex: 1;
+	position: relative;
+	box-sizing: border-box;
+}
+
+/* Red indicator line positioned above the blue nav bar */
+nav .main-nav > li::before {
+	content: "";
+	position: absolute;
+	top: -3px; /* Positions line directly above the blue navbar */
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: transparent;
+	transition: background-color 0.3s ease;
+}
+
+/* Reveal the red line above the active/hovered item */
+nav .main-nav > li:hover::before {
+	background-color: var(--red);
+}
+
+nav .main-nav > li > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+	height: 100%;
+	padding: 12px 10px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+	box-sizing: border-box;
+}
+
+nav .main-nav > li:hover > a,
+nav .main-nav > li > a:hover {
+	background-color: var(--nav-blue);
+}
+
+/* Shared dropdown rules */
+nav .main-nav ul {
+	display: none;
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+nav .main-nav li {
+	position: relative;
+}
+
+/* Level 1 Sub-Navigation (Matches the exact width of the parent nav button) */
+nav .main-nav li.dropdown > ul.dropdown-content {
+	top: 100%;
+	left: 0;
+	width: 100%; /* Matches parent li width */
+	min-width: 0; /* Clears fixed width limits */
+	background-color: var(--grey);
+}
+
+nav .main-nav li.dropdown > ul.dropdown-content > li > a {
+	display: block;
+	padding: 10px 14px;
+	font-size: small;
+	color: var(--nav-white);
+	text-decoration: none;
+	white-space: normal; /* Prevents text overflow if nav item is narrow */
+	word-break: break-word;
+	box-sizing: border-box;
+}
+
+/* Hover state for sub-items (Light Grey) */
+nav .main-nav li.dropdown > ul.dropdown-content > li:hover > a {
+	background-color: var(--nav-grey);
+	color: var(--dark-grey);
+}
+
+/* Level 2 Sub-Sub-Navigation (Breaks out to the right, Darker Grey) */
+nav .main-nav li.dropdown ul.dropdown-content li ul.sub-dropdown {
+	top: 0;
+	left: 100%;
+	width: 100%; /* Same width as level 1, or use min-width: 180px */
+	min-width: 160px;
+	background-color: var(--dark-grey);
+}
+
+nav .main-nav li.dropdown ul.dropdown-content li ul.sub-dropdown > li > a {
+	display: block;
+	padding: 12px 16px;
+	color: var(--nav-white);
+	text-decoration: none;
+	white-space: normal;
+	box-sizing: border-box;
+}
+
+/* Hover state for sub-sub items (Light Grey) */
+nav .main-nav li.dropdown ul.dropdown-content li ul.sub-dropdown > li:hover > a {
+	background-color: var(--nav-grey);
+	color: var(--dark-grey);
+}
+
+/* Reveal menus on hover */
+nav .main-nav li:hover > ul {
+	display: block;
+}
+
+nav .container-inner {
+	overflow: visible;
+}
+/* ===== GENERAL LIST LINKS ===== */
+ul:not(nav ul) {
+	list-style-type: none;
+}
+
+ul:not(nav ul) li {
+	margin-bottom: 10px;
+}
+
+ul:not(nav ul) li a {
+	display: inline-block;
+	background-color: var(--red);
+	color: white;
+	font-size: 1.1rem;
+	padding: 5px 15px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+ul:not(nav ul) li a:hover,
+ul:not(nav ul) li a:focus {
+	background-color: var(--red);
+	outline: none;
+	text-decoration: none;
+}
+
+/* ===== BUTTONS ===== */
+button {
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	background-color: var(--red);
+	color: white;
+	font-size: 1.2rem;
+	padding: 12px 20px;
+	border: none;
+}
+
+button:hover {
+	background-color: var(--blue);
+}
+
+/* ===== HEADER ===== */
+.header {
+	background-color: #f2f4f5;
+	padding: 10px 10px;
+	text-align: left;
+}
+
+.header h1 {
+	font-size: 2rem;
+	text-transform: capitalize;
+}
+
+.header h2 {
+	font-weight: 400;
+	color: #808080;
+}
+
+/* ===== CONTENT AREAS ===== */
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.side,
+.main {
+	background: var(--white);
+	padding: 15px;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+/* ===== HIGHLIGHT BOX ===== */
+.blue-box {
+	background-color: #b7c9d3;
+	padding: 10px;
+	border-left: 5px solid var(--blue);
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+	color: #cfcfcf;
+	flex-shrink: 0;
+}
+
+.footer {
+	background-color: #383a3d;
+	padding: 20px;
+}
+
+.footer-end {
+	background-color: #222426;
+	color: #cfcfcf;
+	padding: 20px;
+	text-align: center;
+}
+
+/* ===== LINKS ===== */
+a {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 300px) {
+
+	input,
+	select,
+	button {
+		width: 100%;
+	}
+}
+
+iframe {
+	width: 100%;
+	width: 400px;
+	height: 230px;
+	border: 3px solid var(--blue);
+	border-radius: 8px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease;
+}
+
+/* ===== FAQ ===== */
+.faq-item {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.faq-question {
+	width: 98%;
+	text-align: left;
+	padding: 10px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	background: #808080;
+	color: white;
+	border-radius: 4px;
+	position: relative;
+}
+
+.faq-question:hover {
+	background: #002a80;
+}
+
+.faq-answer {
+	display: none;
+	padding: 10px 15px;
+	margin-top: 5px;
+	border-left: 3px solid var(--blue);
+	background: #f2f4f5;
+	border-radius: 0 4px 4px 0;
+}
+
+
+.small-btn {
+	background-color: var(--blue);
+	font-size: 1.0rem;
+	padding: 2px 6px;
+	margin: 1px;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 16px;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+}
+
+.hamburger:hover {
+  background-color: var(--nav-blue, #002a80);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Transform bars into an 'X' when active */
+.hamburger.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== MOBILE RESPONSIVE DRAWER ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show toggle button on mobile */
+  }
+
+  nav .container-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Align hamburger to the right */
+  }
+
+  /* Collapse the navigation drawer by default on mobile */
+  nav .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    background-color: var(--blue, #001871);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Show drawer when opened via JS */
+  nav .main-nav.is-open {
+    display: flex;
+  }
+
+  nav .main-nav > li {
+    width: 100%;
+    flex: none;
+  }
+
+  /* Reposition red indicator as a left border instead of top line on mobile */
+  nav .main-nav > li::before {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+  }
+
+  nav .main-nav > li > a {
+    justify-content: flex-start;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  /* Nested dropdown displays inline within drawer */
+  nav .main-nav ul {
+    position: static;
+    box-shadow: none;
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  nav .main-nav li.dropdown > ul.dropdown-content {
+    background-color: var(--grey, #808080);
+  }
+
+  nav .main-nav li.dropdown ul.dropdown-content li ul.sub-dropdown {
+    background-color: var(--dark-grey, #383a3d);
+    padding-left: 10px;
+  }
+
+  /* Search input adjustments in mobile drawer */
+  nav .main-nav > li.nav-search-item {
+    padding: 10px 16px;
+  }
+}
+
+/* ===== NAV SEARCH BAR ===== */
+nav .main-nav > li.nav-search-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10px;
+	flex: 1.2; /* Slightly wider than standard nav buttons */
+}
+
+/* Suppress the red top line indicator on hover for the search input item */
+nav .main-nav > li.nav-search-item::before {
+	display: none;
+}
+
+.nav-search-wrapper {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.nav-search-input {
+	width: 100%;
+	height: 30px;
+	padding: 6px 12px 6px 30px;
+	margin: 0;
+	font-family: inherit;
+	background-color: #ffffff;
+	border: 1px solid transparent;
+	outline: none;
+	box-sizing: border-box;
+	transition: all 0.25s ease-in-out;
+
+	/* Inline magnifying glass icon */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 12px 12px;
+}
+
+/* Placeholder styling */
+.nav-search-input::placeholder {
+	color: #9aa0a6;
+	opacity: 1;
+}
+
+/* Focus and hover states */
+.nav-search-input:hover {
+	border-color: #b7c9d3;
+}
+
+.nav-search-input:focus {
+	border-color: #ba0c2f;
+	box-shadow: 0 0 0 2px rgba(186, 12, 47, 0.2);
+	background-color: #ffffff;
+	
+	/* Recolor icon to navy on focus */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23001871' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Mobile drawer adaptation */
+@media (max-width: 768px) {
+	nav .main-nav > li.nav-search-item {
+		padding: 12px 16px;
+		width: 100%;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.nav-search-input {
+		height: 38px;
+		font-size: 0.95rem;
+		background-position: 12px center;
+		padding-left: 38px;
+	}
+}
