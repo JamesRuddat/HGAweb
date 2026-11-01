@@ -1,93 +1,94 @@
+import { NAV_STRUCTURE } from "/js/nav-data.js";
+
 export class BreadCrumbs extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
-  // Map slugs to clean readable labels
-  static get labelMap() {
-    return {
-      "pages": "", // Empty string means skip this segment
-      "home": "Home",
-      "programs": "Programs",
-      "cadet-programs": "Cadet Programs",
-      "color-guard": "Color Guard",
-      "honor-guard": "Honor Guard",
-      "hga-cha": "HGA / CHA",
-      "equipment": "Equipment",
-      "drill": "Drill Standards",
-      "sop": "SOP Manual"
-    };
-  }
+  /**
+   * Recursively finds the active path hierarchy matching the current URL.
+   * Returns an array of node objects [{ title, href }, ...] from root to leaf.
+   */
+  findPathInNav(nodes, currentPath, currentChain = []) {
+    for (const node of nodes) {
+      const nextChain = [...currentChain, { title: node.title, href: node.href }];
 
-  // Explicit URL fallbacks for intermediary paths
-  static get routeMap() {
-    return {
-      "programs": "/pages/home.html#programs",
-      "cadet-programs": "/pages/home.html#cadet-programs",
-      "color-guard": "/pages/color-guard.html",
-      "honor-guard": "/pages/honor-guard.html",
-      "equipment": "/pages/equipment.html"
-    };
-  }
+      // Direct match
+      if (node.href === currentPath) {
+        return nextChain;
+      }
 
-  formatSlug(slug) {
-    const clean = slug.replace(/\.html?$/i, "");
-    if (BreadCrumbs.labelMap[clean] !== undefined) {
-      return BreadCrumbs.labelMap[clean];
+      // Check nested children
+      if (node.children && node.children.length > 0) {
+        const found = this.findPathInNav(node.children, currentPath, nextChain);
+        if (found) return found;
+      }
     }
-    return clean
+    return null;
+  }
+
+  /**
+   * Fallback formatter if the current page isn't in NAV_STRUCTURE
+   */
+  formatSlug(slug) {
+    return slug
+      .replace(/\.html?$/i, "")
       .split(/[-_]+/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
   }
 
-  resolveHref(slug) {
-    const clean = slug.replace(/\.html?$/i, "");
+  render() {
+    const currentPath = window.location.pathname;
+    const crumbs = [{ title: "Home", href: "/pages/home.html" }];
 
-    // 1. Check explicit route map first
-    if (BreadCrumbs.routeMap[clean]) {
-      return BreadCrumbs.routeMap[clean];
+    // 1. Try finding the route inside NAV_STRUCTURE
+    const matchedPath = this.findPathInNav(NAV_STRUCTURE, currentPath);
+
+    if (matchedPath && matchedPath.length > 0) {
+      crumbs.push(...matchedPath);
+    } else {
+      // 2. Fallback: Parse URL slugs if the page isn't registered in NAV_STRUCTURE
+      const rawSegments = currentPath.split("/").filter(Boolean);
+      let accumulated = "";
+
+      rawSegments.forEach((segment, idx) => {
+        accumulated += `/${segment}`;
+        const cleanSlug = segment.replace(/\.html?$/i, "");
+        if (cleanSlug.toLowerCase() === "pages" || cleanSlug.toLowerCase() === "home") return;
+
+        const isLast = idx === rawSegments.length - 1;
+        const pageTitle = document.querySelector(".main-content-header h1, h1")?.innerText?.trim();
+
+        crumbs.push({
+          title: isLast ? (pageTitle || this.formatSlug(segment)) : this.formatSlug(segment),
+          href: isLast ? null : (accumulated.endsWith(".html") ? accumulated : `${accumulated}.html`)
+        });
+      });
     }
 
-    // 2. Direct page link under /pages/
-    return `/pages/${clean}.html`;
-  }
-
-  render() {
-    const path = window.location.pathname;
-    const rawSegments = path.split("/").filter(Boolean);
-
-    // Initial root crumb
-    const crumbs = [{ label: "Home", href: "/pages/home.html" }];
-
-    rawSegments.forEach((segment, idx) => {
-      const isLast = idx === rawSegments.length - 1;
-      const cleanSlug = segment.replace(/\.html?$/i, "");
-      const label = this.formatSlug(segment);
-
-      // Skip ignored folders (e.g. 'pages') or duplicate home
-      if (!label || cleanSlug.toLowerCase() === "home") return;
-
-      const titleFromPage = document.querySelector(".main-content-header h1, h1")?.innerText?.trim();
-
-      crumbs.push({
-        label: isLast ? (titleFromPage || label) : label,
-        href: isLast ? null : this.resolveHref(segment)
-      });
+    // Deduplicate any consecutive identical crumbs (e.g., if parent and child share the same title or href)
+    const filteredCrumbs = crumbs.filter((crumb, idx, arr) => {
+      if (idx === 0) return true;
+      return crumb.title !== arr[idx - 1].title;
     });
 
-    // Render as plain links with / separators
-    const htmlOutput = crumbs.map((crumb, idx) => {
-      const isLast = idx === crumbs.length - 1;
-      if (isLast) {
-        return `<span class="current-page">${crumb.label}</span>`;
-      }
-      return `<a href="${crumb.href}">${crumb.label}</a><span class="crumb-separator">/</span>`;
-    }).join("");
+    // 3. Build HTML Output
+    const htmlOutput = filteredCrumbs
+      .map((crumb, idx) => {
+        const isLast = idx === filteredCrumbs.length - 1;
 
-    // Uses div instead of nav
+        if (isLast) {
+          // Terminal active item
+          return `<span class="current-page" aria-current="page">${crumb.title}</span>`;
+        }
+
+        return `<a href="${crumb.href}">${crumb.title}</a><span class="crumb-separator">/</span>`;
+      })
+      .join("");
+
     this.innerHTML = `
-      <div class="breadcrumb-trail">
+      <div class="breadcrumb-trail" aria-label="Breadcrumb">
         ${htmlOutput}
       </div>
     `;

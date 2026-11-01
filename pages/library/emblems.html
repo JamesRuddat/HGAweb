@@ -1,102 +1,196 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Title - CAP Study Guide</title>
-  
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="/css/Wiki.css">
-
-  <!-- Load Web Component & Partial Modules -->
+  <title>Honor Guard Emblems</title>
+  <link rel="shortcut icon" href="/assets/HGA/CAP HG Colored Emblem.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/CAPstylesheet.css">
   <script type="module" src="/js/header.js"></script>
   <script type="module" src="/js/footer.js"></script>
   <script src="/js/partials.js" defer></script>
+  <script type="module" src="/js/breadcrumbs.js"></script>
 </head>
+
 <body>
 
-  <!-- Site Header Web Component -->
+  <!-- Full-Width Header & Navigation Web Component -->
   <site-header></site-header>
 
-  <!-- Overall Wiki Container Layout -->
-  <div class="wiki-container">
-    
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <div class="sec">
-          <div class="sec-label">Page Navigation</div>
-          <ul class="wiki-nav-list">
-            <li><a href="#sec1" class="active">1. First Section</a></li>
-            <li><a href="#sec2">2. Second Section</a></li>
-            <li><a href="#sec3">3. Third Section</a></li>
-          </ul>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="sec">
-          <div class="sec-label">Quick Links</div>
-          <ul class="wiki-nav-list">
-            <li><a href="/pages/color-guard.html">Color Guard</a></li>
-            <li><a href="/pages/honor-guard.html">Honor Guard</a></li>
-            <li><a href="/pages/hga-cha.html">HGA / CHA</a></li>
-            <li><a href="/pages/equipment.html">Equipment</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- Main Layout Wrapper -->
+  <div class="content-container container-inner">
+    <!-- 1. Left Side Nav -->
+    <aside class="side-nav">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="/pages/library/equipment.html">Equipment</a></li>
+        <li><a href="/pages/library/drill-terms.html">Drill Terms</a></li>
+        <li><a href="/pages/library/publications.html">CAP Publications</a></li>
+        <li><a href="/pages/library/other-publications.html">Other Publications</a></li>
+        <li><a href="/pages/library/resources.html" class="active">Branding &amp; Emblems</a></li>
+      </ul>
     </aside>
 
-    <!-- Main Content Body -->
-    <main class="preview">
-      <div class="preview-label">
-        <span>Article Title Here</span>
-        <span style="font-size: 0.8rem; font-family: sans-serif; color: var(--wiki-muted);">Reference Subtitle</span>
+    <!-- 2. Main Area -->
+    <main class="main">
+      <bread-crumbs></bread-crumbs>
+      
+      <header class="main-content-header">
+        <h1>Honor Guard Emblems &amp; Heraldry</h1>
+      </header>
+
+      <!-- Split Body Layout Wrapper -->
+      <div class="main-body-layout">
+        <!-- Primary Article Content -->
+        <article class="main-content">
+          <p>Official heraldic insignia, seals, and shields of the Civil Air Patrol Honor Guard and Honor Guard Academy. These assets are authorized for use in ceremony programs, certificates, educational manuals, and uniform ascot patches per CAPR 900-2 and CAPR 39-1 §9.6.</p>
+
+          <!-- Section 1: Honor Guard Shields -->
+          <section id="hg-shields" class="content-section">
+            <h2>1. Unit Honor Guard Shields</h2>
+            <p>The primary shield emblem represents the unit honor guard program and ceremonial elements. It is authorized for wear on the ceremonial ascot with the Service Dress Honor Guard Uniform (Class A).</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; text-align: center;">
+              <!-- Shield 1: AF Style Color -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HG AF Colors Emblem.png" alt="USAF Style Honor Guard Shield Color" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">Air Force Style Shield</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Full Color Traditional</p>
+                <a href="/assets/HGA/CAP HG AF Colors Emblem.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+
+              <!-- Shield 2: CAP Blue Style Color -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HG Colored Emblem.png" alt="CAP Colored Blue Honor Guard Shield" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">CAP Blue Shield</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Official CAP Palette Color</p>
+                <a href="/assets/HGA/CAP HG Colored Emblem.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+
+              <!-- Shield 3: B&W Monochrome -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HG BW Emblem.png" alt="Honor Guard Shield Black and White" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">Monochrome Shield</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Black &amp; White Line Art</p>
+                <a href="/assets/HGA/CAP HG BW Emblem.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2: HGA Seals -->
+          <section id="hga-seals" class="content-section">
+            <h2>2. Honor Guard Academy Seals</h2>
+            <p>The circular seal is the official mark of the Honor Guard Academy (HGA). It is utilized on graduation certificates, curriculum binders, and official academy communications.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; text-align: center;">
+              <!-- Seal 1: AF Style Color -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HGA Seal.png" alt="USAF Style HGA Seal Color" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">Air Force Style Seal</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Full Color Round Seal</p>
+                <a href="/assets/HGA/CAP HGA Seal.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+
+              <!-- Seal 2: CAP Blue Style Color -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HGA Colored Seal.png" alt="CAP Colored Blue HGA Seal" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">CAP Blue Seal</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Official CAP Palette Color</p>
+                <a href="/assets/HGA/CAP HGA Colored Seal.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+
+              <!-- Seal 3: B&W Monochrome -->
+              <div style="background: var(--body); padding: 16px; border: 1px solid #d1d5db; border-radius: 4px;">
+                <img src="/assets/HGA/CAP HGA BW Seal.png" alt="HGA Seal Black and White" width="160" height="160" style="object-fit: contain; margin-bottom: 10px;">
+                <h4 style="margin: 0 0 6px 0; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--blue);">Monochrome Seal</h4>
+                <p style="font-size: 0.8rem; color: var(--text-grey); margin: 0 0 10px 0;">Black &amp; White Line Art</p>
+                <a href="/assets/HGA/CAP HGA BW Seal.png" download class="modal-btn secondary" style="font-size: 0.78rem; padding: 4px 10px; display: inline-block; text-decoration: none;">Download PNG</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Usage Matrix -->
+          <section id="usage-matrix" class="content-section">
+            <h2>3. Authorized Heraldic Application Matrix</h2>
+            <p>Guidelines for selecting the correct format based on publication media and ceremonial context:</p>
+
+            <div class="table-container">
+              <table class="cap-table">
+                <thead>
+                  <tr>
+                    <th>Insignia Variant</th>
+                    <th>Color Profile</th>
+                    <th>Authorized Applications</th>
+                    <th>Governing Policy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Air Force Style Shield</strong></td>
+                    <td>Full Color (AF Heritage)</td>
+                    <td>Formal joint-service programs, presentation binders, website hero banners</td>
+                    <td>DAFMAN 34-165</td>
+                  </tr>
+                  <tr>
+                    <td><strong>CAP Blue Shield</strong></td>
+                    <td>CAP Navy &amp; Red</td>
+                    <td>Ascot embroidery patch, unit guidons, official awards programs</td>
+                    <td>CAPR 39-1 §9.6.7.8</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Monochrome Shield</strong></td>
+                    <td>Black &amp; White</td>
+                    <td>Field SOP manuals, photocopied inspection rubrics, black-and-white orders</td>
+                    <td>CAPR 900-2</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Air Force Style Seal</strong></td>
+                    <td>Full Color (AF Heritage)</td>
+                    <td>Honor Guard Academy diplomas, challenge coin minting, ceremonial dais banners</td>
+                    <td>CAPP 3 Ch. 8</td>
+                  </tr>
+                  <tr>
+                    <td><strong>CAP Blue Seal</strong></td>
+                    <td>CAP Navy &amp; Red</td>
+                    <td>Academy graduation programs, student dossiers, regional cadet records</td>
+                    <td>CAPR 60-1 §8.4.6</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Monochrome Seal</strong></td>
+                    <td>Black &amp; White</td>
+                    <td>Written exam covers, daily staff briefings, trainee sign-in rosters</td>
+                    <td>CAPP 60-71</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </article>
+
+        <!-- 3. Embedded In-Page Links (Right Rail) -->
+        <aside class="main-links" aria-label="In-page navigation">
+          <h4>Page Anchors</h4>
+          <br>
+          <ul>
+            <li><a href="#hg-shields" class="active" aria-current="page">1. HG Shields (3)</a></li>
+            <li><a href="#hga-seals">2. HGA Seals (3)</a></li>
+            <li><a href="#usage-matrix">3. Application Matrix</a></li>
+          </ul>
+
+          <h4 style="margin-top: 24px;">Related Library</h4>
+          <br>
+          <ul>
+            <li><a href="/pages/library/equipment.html">Equipment Guide</a></li>
+            <li><a href="/pages/library/publications.html">CAP Publications</a></li>
+            <li><a href="/pages/honor-guard/ceremonies.html">Ceremonial SOP</a></li>
+          </ul>
+        </aside>
       </div>
-
-      <!-- Infobox (Optional) -->
-      <div class="wiki-infobox">
-        <div class="wiki-infobox-header">Topic Summary</div>
-        <div style="text-align:center; padding: 5px;">
-          <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="#002b66" stroke="#d4af37" stroke-width="3"/>
-          </svg>
-        </div>
-        <table style="width:100%; font-size:0.8rem;">
-          <tr><td><strong>Key 1:</strong></td><td>Value 1</td></tr>
-          <tr><td><strong>Key 2:</strong></td><td>Value 2</td></tr>
-        </table>
-      </div>
-
-      <!-- Introduction Paragraph -->
-      <p>Write your introduction text here...</p>
-
-      <!-- Table of Contents (Optional) -->
-      <div class="wiki-toc">
-        <div class="wiki-toc-title">Contents</div>
-        <ul>
-          <li><a href="#sec1">1. First Section</a></li>
-          <li><a href="#sec2">2. Second Section</a></li>
-          <li><a href="#sec3">3. Third Section</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 1 -->
-      <h2 id="sec1">1. First Section</h2>
-      <p>Add content for section 1 here.</p>
-
-      <!-- Section 2 -->
-      <h2 id="sec2">2. Second Section</h2>
-      <p>Add content for section 2 here.</p>
-
-      <!-- Section 3 -->
-      <h2 id="sec3">3. Third Section</h2>
-      <p>Add content for section 3 here.</p>
-
     </main>
   </div>
 
-  <!-- Site Footer Web Component -->
+  <!-- Footer Web Component -->
   <site-footer></site-footer>
 
 </body>

@@ -39,6 +39,40 @@ main {
 	flex: 1;
 }
 
+/* ===== TOP ANNOUNCEMENT BANNER ===== */
+.top-banner {
+  background-color: var(--dark-grey, #222527);
+  border-bottom: 2px solid var(--red, #BA0D2F);
+  color: #ffffff;
+  font-family: Ubuntu, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.top-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  text-align: center;
+}
+
+/* Red Notice Pill */
+.banner-badge {
+  background-color: var(--red, #BA0D2F);
+  color: #ffffff;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
 /* ===== CONTAINERS & LAYOUT ===== */
 .full-width {
 	width: 100%;

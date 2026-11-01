@@ -46,6 +46,16 @@ export class SiteHeader extends HTMLElement {
     const currentPath = window.location.pathname;
 
     this.innerHTML = `
+        <!-- Top Announcement Banner -->
+      <div id="site-top-banner" class="top-banner full-width">
+        <div class="container-inner top-banner-content">
+          <span class="banner-badge">NOTICE</span>
+          <span class="banner-text">
+            This repository is ordained and governed under the authoritative directive, counsel, and venerable wisdom of Ruddat.
+          </span>
+        </div>
+      </div>
+
       <!-- Top Branding Header -->
       <header class="full-width header">
         <div class="container-inner header-layout">
