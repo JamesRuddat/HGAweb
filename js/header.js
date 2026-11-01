@@ -9,11 +9,30 @@ export class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <!-- Top Branding Header -->
       <header class="full-width header">
-        <div class="container-inner">
-          <h1>CAP Study Guide</h1>
-          <h3>Cadet Program Resources</h3>
-        </div>
-      </header>
+  <div class="container-inner header-layout">
+    <!-- Left Group: Emblem + Title/Subtitle -->
+    <div class="header-left">
+      <img src="/assets/HGA/CAP HG Colored Emblem.png" alt="CAP HG Emblem" class="header-emblem">
+      <div class="header-text">
+        <h1>Honor Guard</h1>
+        <h3>Unit Program Guide</h3>
+      </div>
+    </div>
+
+    <!-- Right Group: Search Bar + Second Emblem/Image -->
+    <div class="header-right">
+      <div class="header-search-wrapper">
+        <input 
+          type="text" 
+          id="nav-quiz-search" 
+          placeholder="Search..." 
+          aria-label="Search Subjects" 
+          class="header-search-input"
+        />
+      </div>
+    </div>
+  </div>
+</header>
 
       <!-- Navigation Bar -->
       <nav class="full-width" id="navbar">
@@ -27,8 +46,12 @@ export class SiteHeader extends HTMLElement {
 
           <!-- Main Navigation Links & Dropdowns -->
           <ul id="nav-drawer" class="main-nav">
-            <li class="${currentPath.includes("home") ? "active-nav" : ""}">
-              <a href="/pages/home.html">Overview</a>
+            <li class="dropdown ${currentPath.includes("home") ? "active-nav" : ""}">
+              <a href="/pages/home.html">About</a>
+              <ul class="dropdown-content">
+                <li><a href="/pages/color-guard.html#drill">Drill Standards</a></li>
+                <li><a href="/pages/color-guard.html#manual">Manual of Arms</a></li>
+              </ul>
             </li>
             
             <li class="dropdown ${currentPath.includes("color-guard") ? "active-nav" : ""}">
@@ -55,21 +78,12 @@ export class SiteHeader extends HTMLElement {
               </ul>
             </li>
 
-            <li class="${currentPath.includes("equipment") ? "active-nav" : ""}">
-              <a href="/pages/equipment.html">Equipment</a>
-            </li>
-
-            <!-- Integrated Search Bar Item -->
-            <li class="nav-search-item">
-              <div class="nav-search-wrapper">
-                <input 
-                  type="text" 
-                  id="nav-quiz-search" 
-                  placeholder="Search drill..." 
-                  aria-label="Search Subjects" 
-                  class="nav-search-input"
-                />
-              </div>
+            <li class="dropdown ${currentPath.includes("equipment") ? "active-nav" : ""}">
+              <a href="/pages/equipment.html">Library</a>
+              <ul class="dropdown-content">
+                <li><a href="/pages/color-guard.html#drill">Drill Standards</a></li>
+                <li><a href="/pages/color-guard.html#manual">Manual of Arms</a></li>
+              </ul>
             </li>
           </ul>
         </div>
