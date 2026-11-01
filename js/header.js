@@ -1,6 +1,45 @@
+import { NAV_STRUCTURE } from "/js/nav-data.js";
+
 export class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.renderShell();
+  }
+
+  renderNavItems(items, currentPath, isSub = false) {
+    return items
+      .map((item) => {
+        const hasChildren = item.children && item.children.length > 0;
+        const isActive =
+          currentPath === item.href ||
+          (hasChildren && item.children.some((c) => currentPath.startsWith(c.href || "")));
+
+        if (!hasChildren) {
+          return `<li><a href="${item.href}">${item.title}</a></li>`;
+        }
+
+        if (isSub) {
+          // Level 2 Sub-dropdown
+          return `
+            <li class="dropdown">
+              <a href="${item.href}">${item.title} &#9656;</a>
+              <ul class="sub-dropdown">
+                ${this.renderNavItems(item.children, currentPath, true)}
+              </ul>
+            </li>
+          `;
+        }
+
+        // Top-level dropdown
+        return `
+          <li class="dropdown ${isActive ? "active-nav" : ""}">
+            <a href="${item.href}">${item.title}</a>
+            <ul class="dropdown-content">
+              ${this.renderNavItems(item.children, currentPath, true)}
+            </ul>
+          </li>
+        `;
+      })
+      .join("");
   }
 
   renderShell() {
@@ -9,88 +48,48 @@ export class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <!-- Top Branding Header -->
       <header class="full-width header">
-  <div class="container-inner header-layout">
-    <!-- Left Group: Emblem + Title/Subtitle -->
-    <div class="header-left">
-      <img src="/assets/HGA/CAP HG Colored Emblem.png" alt="CAP HG Emblem" class="header-emblem">
-      <div class="header-text">
-        <h1>Honor Guard</h1>
-        <h3>Unit Program Guide</h3>
-      </div>
-    </div>
+        <div class="container-inner header-layout">
+          <div class="header-left">
+            <img src="/assets/HGA/CAP HG Colored Emblem.png" alt="CAP HG Emblem" class="header-emblem">
+            <div class="header-text">
+              <h1>Civil Air Patrol Honor Guard</h1>
+              <h3>Unit Program Guide &amp; Training</h3>
+            </div>
+          </div>
 
-    <!-- Right Group: Search Bar + Second Emblem/Image -->
-    <div class="header-right">
-      <div class="header-search-wrapper">
-        <input 
-          type="text" 
-          id="nav-quiz-search" 
-          placeholder="Search..." 
-          aria-label="Search Subjects" 
-          class="header-search-input"
-        />
-      </div>
-    </div>
-  </div>
-</header>
+          <div class="header-right">
+            <div class="header-search-wrapper">
+              <input 
+                type="text" 
+                id="nav-quiz-search" 
+                placeholder="Search..." 
+                aria-label="Search Subjects" 
+                class="header-search-input"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
 
       <!-- Navigation Bar -->
       <nav class="full-width" id="navbar">
         <div class="container-inner">
-          <!-- Mobile Hamburger Toggle -->
           <button id="hamburger-btn" class="hamburger" aria-label="Toggle Navigation" type="button">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
           </button>
 
-          <!-- Main Navigation Links & Dropdowns -->
+          <!-- Generated Navigation -->
           <ul id="nav-drawer" class="main-nav">
-            <li class="dropdown ${currentPath.includes("home") ? "active-nav" : ""}">
-              <a href="/pages/home.html">About</a>
-              <ul class="dropdown-content">
-                <li><a href="/pages/color-guard.html#drill">Drill Standards</a></li>
-                <li><a href="/pages/color-guard.html#manual">Manual of Arms</a></li>
-              </ul>
-            </li>
-            
-            <li class="dropdown ${currentPath.includes("color-guard") ? "active-nav" : ""}">
-              <a href="/pages/color-guard.html">Color Guard</a>
-              <ul class="dropdown-content">
-                <li><a href="/pages/color-guard.html#drill">Drill Standards</a></li>
-                <li><a href="/pages/color-guard.html#manual">Manual of Arms</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown ${currentPath.includes("honor-guard") || currentPath.includes("hga-cha") ? "active-nav" : ""}">
-              <a href="/pages/honor-guard.html">Honor Guard</a>
-              <ul class="dropdown-content">
-                <li><a href="/pages/honor-guard.html#ceremonies">Ceremonies</a></li>
-                <li class="dropdown">
-                  <a href="/pages/hga-cha.html">HGA / CHA &#9656;</a>
-                  <ul class="sub-dropdown">
-                    <li><a href="/pages/hga-cha.html#curriculum">Curriculum</a></li>
-                    <li><a href="/pages/hga-cha.html#cadre">Cadre Staff</a></li>
-                    <li><a href="/pages/hga-cha.html#standards">Graduation Criteria</a></li>
-                  </ul>
-                </li>
-                <li><a href="/pages/honor-guard.html#sop">SOP Manual</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown ${currentPath.includes("equipment") ? "active-nav" : ""}">
-              <a href="/pages/equipment.html">Library</a>
-              <ul class="dropdown-content">
-                <li><a href="/pages/color-guard.html#drill">Drill Standards</a></li>
-                <li><a href="/pages/color-guard.html#manual">Manual of Arms</a></li>
-              </ul>
-            </li>
+            ${this.renderNavItems(NAV_STRUCTURE, currentPath)}
           </ul>
         </div>
       </nav>
     `;
 
     this.bindMobileNav();
+    this.bindMobileDropdowns();
     this.bindSearchInput();
   }
 
@@ -114,17 +113,36 @@ export class SiteHeader extends HTMLElement {
     }
   }
 
+  bindMobileDropdowns() {
+    const dropdownItems = this.querySelectorAll("nav .main-nav li.dropdown");
+
+    dropdownItems.forEach((dropdown) => {
+      const link = dropdown.querySelector(":scope > a");
+      if (!link) return;
+
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          const subMenu = dropdown.querySelector(":scope > ul");
+          if (subMenu) {
+            e.preventDefault();
+            dropdown.classList.toggle("dropdown-active");
+          }
+        }
+      });
+    });
+  }
+
   bindSearchInput() {
     const searchInput = this.querySelector("#nav-quiz-search");
     if (!searchInput) return;
 
     searchInput.addEventListener("input", (e) => {
       const query = e.target.value.toLowerCase().trim();
-      const mainContent = document.querySelector(".main") || document.querySelector(".preview") || document.querySelector("main");
+      const mainContent = document.querySelector(".main") || document.querySelector("main");
 
       if (!mainContent) return;
 
-      const searchableElements = mainContent.querySelectorAll("h1, h2, h3, h4, p, li, section, .faq-item");
+      const searchableElements = mainContent.querySelectorAll("h1, h2, h3, h4, p, li, section");
       searchableElements.forEach((el) => {
         if (query === "") {
           el.style.display = "";
