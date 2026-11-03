@@ -1,201 +1,178 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipment & Procurement Guide - CAP Study Guide</title>
-  
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="/css/Wiki.css">
-
-  <!-- Load Web Component & Partial Modules -->
+  <title>External Publications - CAP Honor Guard</title>
+  <link rel="shortcut icon" href="/assets/HGA/CAP HG Colored Emblem.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/CAPstylesheet.css">
   <script type="module" src="/js/header.js"></script>
   <script type="module" src="/js/footer.js"></script>
   <script src="/js/partials.js" defer></script>
+  <script type="module" src="/js/breadcrumbs.js"></script>
 </head>
+
 <body>
 
-  <!-- Site Header Web Component -->
+  <!-- Full-Width Header & Navigation Web Component -->
   <site-header></site-header>
 
-  <!-- Overall Wiki Container Layout -->
-  <div class="wiki-container">
-    
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <div class="sec">
-          <div class="sec-label">Page Navigation</div>
-          <ul class="wiki-nav-list">
-            <li><a href="#sec1" class="active">1. Finish & Regulations</a></li>
-            <li><a href="#sec2">2. Reference Articles</a></li>
-            <li><a href="#sec3">3. Vanguard Equipment</a></li>
-            <li><a href="#sec4">4. Glendale Equipment</a></li>
-            <li><a href="#sec5">5. Guidon Equipment</a></li>
-          </ul>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="sec">
-          <div class="sec-label">Quick Links</div>
-          <ul class="wiki-nav-list">
-            <li><a href="/pages/color-guard.html">Color Guard</a></li>
-            <li><a href="/pages/honor-guard.html">Honor Guard</a></li>
-            <li><a href="/pages/hga-cha.html">HGA / CHA</a></li>
-            <li><a href="/pages/equipment.html" class="active">Equipment</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- Main Layout Wrapper -->
+  <div class="content-container container-inner">
+    <!-- 1. Left Side Nav -->
+    <aside class="side-nav">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="/pages/library/equipment.html">Equipment</a></li>
+        <li><a href="/pages/library/drill-terms.html">Drill Terms</a></li>
+        <li><a href="/pages/library/publications.html">Honor Guard Publications</a></li>
+        <li><a href="/pages/library/other-publications.html" class="active">External Publications</a></li>
+        <li><a href="/pages/library/emblems.html">Branding &amp; Emblems</a></li>
+      </ul>
     </aside>
 
-    <!-- Main Content Body -->
-    <main class="preview">
-      <div class="preview-label">
-        <span>Color Guard & Honor Guard Equipment Guide</span>
-        <span style="font-size: 0.8rem; font-family: sans-serif; color: var(--wiki-muted);">Procurement & Regulatory Standards</span>
+    <!-- 2. Main Area -->
+    <main class="main">
+      <bread-crumbs></bread-crumbs>
+
+      <header class="main-content-header">
+        <h1>External &amp; Military Publications</h1>
+      </header>
+
+      <!-- Split Body Layout Wrapper -->
+      <div class="main-body-layout">
+        <!-- Primary Article Content -->
+        <article class="main-content">
+          <p>Civil Air Patrol Honor Guards execute ceremonial standards and protocols adapted directly from Department of the Air Force (DAF) doctrine, Department of Defense references, and joint-service manuals. The following external publications serve as primary authorities when CAP publications defer to military standards.</p>
+
+          <!-- Section 1: Department of the Air Force Publications -->
+          <section id="daf-pubs" class="content-section">
+            <h2>Department of the Air Force Doctrine</h2>
+            
+            <div class="blue-box" style="margin: 16px 0;">
+              <strong>Doctrinal Distinction:</strong> Standard color guards utilize <strong>DAFPAM 34-1203</strong> for quick-time regulation marching. Dedicated Civil Air Patrol Honor Guard units execute ceremonial drill derived from <strong>DAFMAN 34-165</strong>.
+            </div>
+
+            <ul>
+              <li>
+                <strong>DAFMAN 34-165 &ndash; <em>Honor Guards</em>:</strong> Primary procedural manual for the USAF Honor Guard and Base Honor Guards. Defines ceremonial movements, slow cadence timing, high-lift mark time, casket watch protocol, and ceremonial uniform maintenance.
+              </li>
+              <li>
+                <strong>DAFPAM 34-1203 &ndash; <em>Drill and Ceremonies</em>:</strong> Baseline Air Force and Space Force regulation drill manual (formerly AFMAN 36-2203). Governs standard marching commands, formations, inspections, and regulation color guard maneuvers.
+              </li>
+              <li>
+                <strong>AFPAM 34-1202 &ndash; <em>Guide to Protocol</em>:</strong> Comprehensive guidance on official ceremonies, precedence of dignitaries, order of flags, receiving lines, and military funeral honors.
+              </li>
+              <li>
+                <strong>AFI 34-1201 &ndash; <em>Protocol</em>:</strong> Establishes official Air Force policies regarding ceremonial decorum, flag etiquette, and formal military functions.
+              </li>
+            </ul>
+          </section>
+
+          <!-- Section 2: POW/MIA Ceremony Packet -->
+          <section id="pow-mia-packet" class="content-section">
+            <h2>POW/MIA Missing Man Table Packet</h2>
+            <p>The National League of POW/MIA Families ceremony packet establishes the standardized layout, script, and table setup used across the Department of Defense and Civil Air Patrol. All ceremonial elements must preserve the solemnity and precise symbolism of this protocol:</p>
+
+            <div class="table-container">
+              <table class="cap-table">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Symbolic Meaning</th>
+                    <th>Ceremonial Placement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Round Table</strong></td>
+                    <td>Represents our everlasting concern for our missing comrades</td>
+                    <td>Centered in front of the audience or head dais</td>
+                  </tr>
+                  <tr>
+                    <td><strong>White Tablecloth</strong></td>
+                    <td>Symbolizes the purity of their motives in answering the call to arms</td>
+                    <td>Draped cleanly and evenly across the table</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Single Red Rose</strong></td>
+                    <td>Reminds us of the lives of these Americans and the loved ones who keep the faith</td>
+                    <td>In a slender vase tied with a yellow ribbon</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Yellow Ribbon</strong></td>
+                    <td>Symbolizes continued uncertainty, hope for their return, and determination to account for them</td>
+                    <td>Tied around the vase holding the red rose</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Slice of Lemon &amp; Salt</strong></td>
+                    <td>Lemon represents their bitter fate; salt symbolizes the tears shed by families awaiting answers</td>
+                    <td>Placed on the bread plate</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Inverted Glass</strong></td>
+                    <td>Symbolizes their inability to share a toast with us today</td>
+                    <td>Placed upside down on the right side of the setting</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Lone Candle</strong></td>
+                    <td>Reflects the frailty of a prisoner alone against oppressors and the hope for their return</td>
+                    <td>Lit in the center of the setting</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Empty Chair</strong></td>
+                    <td>Signifies they are missing and absent from our gathering</td>
+                    <td>Tilted slightly toward the table</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>For the complete ceremony script and reading instructions, reference the <a href="/pages/library/resources.html#pow-mia">Ceremonial Scripts &amp; Protocols page</a>.</p>
+          </section>
+
+          <!-- Section 3: Joint Military Drill References -->
+          <section id="joint-manuals" class="content-section">
+            <h2>Joint Service Weapon Manuals</h2>
+            <p>Because Air Force manuals historically deferred to Army doctrine for manual-of-arms sequences, the following joint publications govern armed details and non-firing replica rifles:</p>
+            <ul>
+              <li>
+                <strong>TC 3-21.5 &ndash; <em>Drill and Ceremonies</em> (U.S. Army):</strong> Primary doctrinal authority for weapon manual of arms, color guard rifle bearer movements, and fixed-position commands with parade rifles.
+              </li>
+              <li>
+                <strong>MCO P5060.20 &ndash; <em>Marine Corps Drill and Ceremonies Manual</em>:</strong> Supplementary reference for joint color guard details and advanced ceremonial rifle sequences.
+              </li>
+              <li>
+                <strong>Title 10, U.S.C. &sect; 9443:</strong> Federal statute authorizing the Secretary of the Air Force and federal agencies to supply equipment, materials, and support to Civil Air Patrol.
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!-- 3. Embedded In-Page Links (Right Rail) -->
+        <aside class="main-links" aria-label="In-page navigation">
+          <h4>In This Document</h4>
+          <ul>
+            <li><a href="#daf-pubs" class="active" aria-current="page">DAF Publications</a></li>
+            <li><a href="#pow-mia-packet">POW/MIA Packet</a></li>
+            <li><a href="#joint-manuals">Joint Manuals</a></li>
+          </ul>
+
+          <h4 style="margin-top: 24px;">Related Library</h4>
+          <ul>
+            <li><a href="/pages/library/publications.html">CAP Regulations</a></li>
+            <li><a href="/pages/library/equipment.html">Equipment Standards</a></li>
+            <li><a href="/pages/library/resources.html">Scripts &amp; Diagrams</a></li>
+          </ul>
+        </aside>
       </div>
-
-      <!-- Infobox Summary -->
-      <div class="wiki-infobox">
-        <div class="wiki-infobox-header">Equipment Overview</div>
-        <div style="text-align:center; padding: 5px;">
-          <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="#002b66" stroke="#d4af37" stroke-width="3"/>
-            <polygon points="50,20 58,40 80,50 58,60 50,80 42,60 20,50 42,40" fill="#d4af37"/>
-          </svg>
-        </div>
-        <table style="width:100%; font-size:0.8rem;">
-          <tr><td><strong>Metal Finish:</strong></td><td>Silver-tone / Chrome</td></tr>
-          <tr><td><strong>Cord Style:</strong></td><td>Box Braid</td></tr>
-          <tr><td><strong>Primary Vendor:</strong></td><td>Vanguard / Glendale</td></tr>
-          <tr><td><strong>Glendale Code:</strong></td><td><code>PARJDT875147</code></td></tr>
-        </table>
-      </div>
-
-      <p>This guide provides a comprehensive breakdown of authorized ceremonial equipment, finish standards, vendor cost comparisons, and governing regulations for Civil Air Patrol Color Guard and Honor Guard elements.</p>
-
-      <!-- Table of Contents -->
-      <div class="wiki-toc">
-        <div class="wiki-toc-title">Contents</div>
-        <ul>
-          <li><a href="#sec1">1. Material Finish & Regulatory References</a></li>
-          <li><a href="#sec2">2. Training & Reference Articles</a></li>
-          <li><a href="#sec3">3. Vanguard Equipment & Cost Breakdown</a></li>
-          <li><a href="#sec4">4. Glendale Equipment & Cost Breakdown</a></li>
-          <li><a href="#sec5">5. Squadron Guidon Equipment</a></li>
-        </ul>
-      </div>
-
-      <!-- Section 1 -->
-      <h2 id="sec1">1. Material Finish & Regulatory References</h2>
-      <p><strong>Finish Standards:</strong> Always use silver-tone metals (chrome, nickel, aluminum, stainless steel) for uniformity across all team components. Per CAPR 900-2:</p>
-      <blockquote>
-        “Air Force spearheads are of chrome or silvertone with matching staff connectors and ferrules. It is recommended that when flagstaffs are a new or replacement purchase, Air Force type be obtained.”
-      </blockquote>
-
-      <h3>Regulatory Guidance</h3>
-      <ul>
-        <li><strong>CAPR 900-2:</strong> Civil Air Patrol Seal, Emblem, and Flag Etiquette</li>
-        <li><strong>AFMAN 36-2203 / DAFPAM 34-1203:</strong> Drill and Ceremonies Manual</li>
-        <li><strong>AFI 34-1201 & AFPAM 34-1202:</strong> Protocol and Guide to Protocol</li>
-        <li><strong>CAPP 60-33:</strong> Civil Air Patrol Drill & Ceremonies</li>
-      </ul>
-
-      <p><strong>Shoulder Cord Note:</strong> The standard cord style used in CAP is the <strong>“Box Braid”</strong> cord. Cost-effective suppliers can be found at <a href="https://www.shouldercords.com" target="_blank" rel="noopener noreferrer">www.shouldercords.com</a>.</p>
-      
-      <p><strong>Vendor Discount:</strong> When ordering through <strong>Glendale</strong>, enter promo code <code>PARJDT875147</code> at checkout for free shipping.</p>
-
-      <!-- Section 2 -->
-      <h2 id="sec2">2. Training & Reference Articles</h2>
-      <ul>
-        <li><a href="https://thedrillmaster.org/2019/12/19/the-why-of-the-military-color-guard-air-force/" target="_blank" rel="noopener noreferrer">The Why of the Military Color Guard (Air Force & Space Force)</a></li>
-        <li><a href="https://thedrillmaster.org/2019/07/23/color-guard-flag-protocol/" target="_blank" rel="noopener noreferrer">Color Guard Flag Protocol</a></li>
-        <li><a href="https://thedrillmaster.org/2018/07/31/formal-casket-watch/" target="_blank" rel="noopener noreferrer">Casket Watch & Funeral Protocol Procedures</a></li>
-        <li><a href="https://thedrillmaster.org/2012/12/19/all-about-the-flag-on-the-casket/" target="_blank" rel="noopener noreferrer">All About the Flag on the Casket</a></li>
-        <li><a href="https://thedrillmaster.org/2018/01/24/all-about-uniform-gloves/" target="_blank" rel="noopener noreferrer">All About Uniform Gloves (Sure-Grip & Long Wrist Fit)</a></li>
-      </ul>
-
-      <!-- Section 3 -->
-      <h2 id="sec3">3. Vanguard Equipment & Cost Breakdown</h2>
-      <table style="width:100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px;">
-        <thead>
-          <tr style="background: var(--wiki-panel); border-bottom: 2px solid var(--wiki-border);">
-            <th style="padding: 6px; text-align: left;">Category</th>
-            <th style="padding: 6px; text-align: left;">Item / Description</th>
-            <th style="padding: 6px; text-align: center;">Vendor Link</th>
-            <th style="padding: 6px; text-align: right;">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Shoulder Cords</td><td>Thick White Interwoven Shoulder Cord</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$35.00 x 4</td></tr>
-          <tr><td>Replica Rifles</td><td>Parade & Honor Guard Brown MK1 Replica</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$112.30 x 2</td></tr>
-          <tr><td>Rifle Slings</td><td>White Web Sling with Nickel Hardware</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$39.10 x 2</td></tr>
-          <tr><td>Rifle Slings</td><td>White Leather Sling with Nickel Hardware (Alt.)</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$60.50 x 2</td></tr>
-          <tr><td>Belts</td><td>Parade Belt & Buckle</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$46.05 x 2</td></tr>
-          <tr><td>Flag Carriers</td><td>White Parade Flag Carrier</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$53.00 x 2</td></tr>
-          <tr><td>Gloves</td><td>USAF Honor Guard Gripper Winter Weight Gloves</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$29.30 x 4</td></tr>
-          <tr><td>Flag Poles</td><td>8’ x 1” Oak Jointed Flag Pole</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$75.25 x 2</td></tr>
-          <tr><td>Flag Poles</td><td>Spear (Air Force Style, Chrome)</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$85.60 x 2</td></tr>
-          <tr><td>Flags</td><td>CAP Squadron/Group Flag</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$601.30</td></tr>
-          <tr><td>Flags</td><td>U.S. Flag (3x5, with Fringe)</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$209.10</td></tr>
-          <tr><td>Floor Stands</td><td>CAP Floor Stand (Chrome / Silver-tone)</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$48.65 x 2</td></tr>
-        </tbody>
-      </table>
-      <p style="text-align: right; font-weight: bold; margin-top: 8px;">Approx. Total Vanguard Package: $1,987.50</p>
-
-      <!-- Section 4 -->
-      <h2 id="sec4">4. Glendale Equipment & Cost Breakdown</h2>
-      <table style="width:100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px;">
-        <thead>
-          <tr style="background: var(--wiki-panel); border-bottom: 2px solid var(--wiki-border);">
-            <th style="padding: 6px; text-align: left;">Category</th>
-            <th style="padding: 6px; text-align: left;">Item / Description</th>
-            <th style="padding: 6px; text-align: center;">Vendor Link</th>
-            <th style="padding: 6px; text-align: right;">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Shoulder Cords</td><td>Button Loop Cord (One Color)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$14.95 x 4</td></tr>
-          <tr><td>Replica Rifles</td><td>DrillAmerica MK1 Replica Rifle</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$99.95 x 2</td></tr>
-          <tr><td>Rifle Slings</td><td>Heavy Web Rifle Slings</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$13.95 x 2</td></tr>
-          <tr><td>Rifle Slings</td><td>Leather Rifle Slings (or Web)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$56.75 x 2</td></tr>
-          <tr><td>Belts</td><td>Parade Belts</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$58.50 x 2</td></tr>
-          <tr><td>Belts</td><td>Military Police Belts (or Parade)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$20.75 x 2</td></tr>
-          <tr><td>Flag Carriers</td><td>Web Flag Carriers (Double Harness)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$56.95 x 2</td></tr>
-          <tr><td>Gloves</td><td>Honor Guard Sure-Grip Gloves</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$9.99 x 4</td></tr>
-          <tr><td>Flag Poles</td><td>Two-Piece Polished Wood Pole (8’ x 1”)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$114.95 x 2</td></tr>
-          <tr><td>Flag Poles</td><td>Army/AF Chrome Spears (Traditional Fit)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$94.95 x 2</td></tr>
-          <tr><td>Flags</td><td>U.S. Flags (Indoor/Parade Use, 3x5 with Fringe)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$89.95</td></tr>
-          <tr><td>Floor Stands</td><td>Floor Stand Adapters</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$26.95 x 2</td></tr>
-          <tr><td>Floor Stands</td><td>Liberty Floor Stands (Silver/Chrome)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$62.95 x 2</td></tr>
-        </tbody>
-      </table>
-      <p style="text-align: right; font-weight: bold; margin-top: 8px;">Approx. Total Glendale Package: $1,445.96</p>
-
-      <!-- Section 5 -->
-      <h2 id="sec5">5. Squadron Guidon Equipment</h2>
-      <table style="width:100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px;">
-        <thead>
-          <tr style="background: var(--wiki-panel); border-bottom: 2px solid var(--wiki-border);">
-            <th style="padding: 6px; text-align: left;">Vendor</th>
-            <th style="padding: 6px; text-align: left;">Item / Description</th>
-            <th style="padding: 6px; text-align: center;">Vendor Link</th>
-            <th style="padding: 6px; text-align: right;">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Vanguard</td><td>Ash Jointed 8’ Guidon Pole with Chrome Accessories</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$230.00</td></tr>
-          <tr><td>Vanguard</td><td>Civil Air Patrol Squadron Guidon Flag</td><td style="text-align:center;"><a href="https://www.vanguardmil.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$70.80</td></tr>
-          <tr><td>Glendale</td><td>Complete Guidon Pole Set (Chrome Spear & Ferrule)</td><td style="text-align:center;"><a href="https://www.paradestore.com" target="_blank" rel="noopener noreferrer">View</a></td><td style="text-align:right;">$197.95</td></tr>
-        </tbody>
-      </table>
-
     </main>
   </div>
 
-  <!-- Site Footer Web Component -->
+  <!-- Footer Web Component -->
   <site-footer></site-footer>
 
 </body>
+
 </html>

@@ -20,15 +20,16 @@ export const NAV_STRUCTURE = [
         title: "Honor Guard",
         href: "/pages/honor-guard/honor-guard.html",
         children: [
+            { title: "Creed", href: "/pages/honor-guard/creed.html" },
             { title: "Uniforms", href: "/pages/honor-guard/ceremonial-uniform.html" },
-            { title: "Ceremonies", href: "/pages/honor-guard/honor-guard.html" },
+            { title: "Ceremonies", href: "/pages/honor-guard/ceremonies.html" },
             { title: "Exam", href: "/pages/honor-guard/online-exam.html" },
             {
-                title: "HGA / CHA",
+                title: "HGA",
                 href: "/pages/honor-guard/hga/hga-cha.html",
                 children: [
                     { title: "Curriculum", href: "/pages/honor-guard/hga/curriculum.html" },
-                    { title: "Cadre Staff", href: "/pages/honor-guard/hga/cadre.html" },
+                    { title: "Cadre & Staff", href: "/pages/honor-guard/hga/cadre.html" },
                     { title: "Graduation Criteria", href: "/pages/honor-guard/hga/standards.html" }
                 ]
             }
@@ -40,9 +41,8 @@ export const NAV_STRUCTURE = [
         children: [
             { title: "Equipment", href: "/pages/library/equipment.html" },
             { title: "Drill Terms", href: "/pages/library/drill-terms.html" },
-            { title: "CAP Publications", href: "/pages/library/publications.html" },
-            { title: "Other Publications", href: "/pages/library/other-publications.html" },
-            { title: "Scripts & Procedures", href: "/pages/library/resources.html" },
+            { title: "Honor Guard Publications", href: "/pages/library/publications.html" },
+            { title: "External Publications", href: "/pages/library/other-publications.html" },
             { title: "Branding & Emblems", href: "/pages/library/emblems.html" }
         ]
     }
