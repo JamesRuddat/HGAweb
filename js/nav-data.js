@@ -11,9 +11,10 @@ export const NAV_STRUCTURE = [
     },
     {
         title: "Color Guard",
-        href: "/pages/color-guard/drill-standards.html",
+        href: "/pages/color-guard/color-guard.html",
         children: [
-            { title: "Manual of Arms", href: "/pages/color-guard/manual-of-arms.html" }
+            { title: "Manual of Arms", href: "/pages/color-guard/manual-of-arms.html" },
+            { title: "Posting & Retrieving", href: "/pages/color-guard/manual-of-arms.html" }
         ]
     },
     {
@@ -26,7 +27,7 @@ export const NAV_STRUCTURE = [
             { title: "Exam", href: "/pages/honor-guard/online-exam.html" },
             {
                 title: "HGA",
-                href: "/pages/honor-guard/hga/hga-cha.html",
+                href: "/pages/honor-guard/hga/honor-guard-academy.html",
                 children: [
                     { title: "Curriculum", href: "/pages/honor-guard/hga/curriculum.html" },
                     { title: "Cadre & Staff", href: "/pages/honor-guard/hga/cadre.html" },
