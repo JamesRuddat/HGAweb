@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAP Honor Guard</title>
+  <title>About the Site</title>
   <link rel="shortcut icon" href="/assets/HGA/CAP HG Colored Emblem.png" type="image/x-icon">
   <link rel="stylesheet" href="/css/CAPstylesheet.css">
   <script type="module" src="/js/header.js"></script>
@@ -14,100 +14,102 @@
 </head>
 
 <body>
+
   <!-- Full-Width Header & Navigation Web Component -->
   <site-header></site-header>
 
   <!-- Main Layout Wrapper -->
   <div class="content-container container-inner">
-    <!-- 1. Left Side Nav (Omit this whole <aside> element if the page doesn't need a sidebar) -->
+    <!-- 1. Left Side Nav -->
     <aside class="side-nav">
-      <h4>Navigation</h4>
+      <h4>About Us</h4>
       <ul>
-        <li><a href="#sec1">Section 1</a></li>
-        <li><a href="#sec2">Section 2</a></li>
-        <li><a href="#sec3">Section 3</a></li>
+        <li><a href="/pages/about/who-we-are.html">Who We Are</a></li>
+        <li><a href="/pages/about/what-we-do.html">What We Do</a></li>
+        <li><a href="/pages/about/history.html">Program History</a></li>
+        <li><a href="/pages/about/commandant.html">From the Commandant</a></li>
+        <li><a href="/pages/home.html" class="active">About the Site</a></li>
       </ul>
     </aside>
 
     <!-- 2. Main Area -->
     <main class="main">
       <bread-crumbs></bread-crumbs>
+      
       <header class="main-content-header">
-        <h1>From the National Commander</h1>
+        <h1>About the Creator &amp; Project</h1>
       </header>
 
       <!-- Split Body Layout Wrapper -->
       <div class="main-body-layout">
         <!-- Primary Article Content -->
         <article class="main-content">
-          <p>Body content goes here...</p>
+          <p>This knowledge repository was developed out of a deep dedication to ceremonial excellence, standardization, and the continued professional development of cadets and adult leaders within the Civil Air Patrol Honor Guard and color guard communities.</p>
 
-          <section id="sec1" class="content-section">
-            <h2>Section 1</h2>
-            <p>Section 1 details...</p>
+          <!-- Section 1: Developer Bio -->
+          <section id="bio" class="content-section">
+            <h2>About the Creator</h2>
+            <p>As an active member and student of Civil Air Patrol drill and ceremonies doctrine, I built this resource to address a recurring challenge across squadrons and wings: accessible, consolidated, and unambiguous ceremonial training reference material.</p>
+            <p>From organizing uniform inspections and procuring authorized hardware to navigating the nuances between regulation quick-time marching and ceremonial movements, this platform brings together doctrinal guidelines into an interactive, structured study system that members can rely on from any device.</p>
           </section>
 
-          <section id="sec2" class="content-section">
-            <h2>Section 2</h2>
-            <p>Section 2 details...</p>
+          <!-- Section 2: Why This Site Exists -->
+          <section id="mission" class="content-section">
+            <h2>Why This Site Exists</h2>
+            <p>Following the transition from the centralized National Honor Guard Academy to regional programs, unit-level training programs depend heavily on accessible best practices, consistent manuals, and clear study aids. This site exists to:</p>
+            <ul>
+              <li><strong>Bridge the Gap:</strong> Clarify the essential distinction between standard regulation color guard drill (CAPP 60-33 / DAFPAM 34-1203) and dedicated ceremonial Honor Guard drill (DAFMAN 34-165).</li>
+              <li><strong>Centralize Procurement:</strong> Provide verified procurement guides, part numbers, and finish standards to ensure units invest in compliant, authorized equipment.</li>
+              <li><strong>Foster Excellence:</strong> Equip cadets preparing for an Honor Guard Academy, cadet competition, or unit ceremonies with self-paced study guides and scripts.</li>
+            </ul>
           </section>
 
-          <section id="sec3" class="content-section">
-            <h2>Section 3</h2>
-            <p>Section 3 details...</p>
+          <!-- Section 3: Doctrinal Alignment & Disclaimer -->
+          <section id="status-disclaimer" class="content-section">
+            <h2>Doctrinal Alignment &amp; Status</h2>
+            <p>All curriculum outlines, uniform guides, manual-of-arms sequences, and ceremonial scripts published on this site strictly follow official Civil Air Patrol regulations regarding drill, ceremonies, uniforms, and cadet protection, including CAPR 39-1, CAPR 60-1, CAPR 60-2, CAPR 900-2, and CAPP 60-33.</p>
 
+            <div class="blue-box" style="margin: 20px 0;">
+              <strong>Important Notice on Status:</strong><br>
+              This website is an <strong>unofficial training resource and study guide</strong>. It is not an official publication of National Headquarters, the United States Air Force, or the United States Government. Content hosted here remains unofficial unless specifically authorized and approved for operational use by a CAP unit commander, wing commander, region commander, or National Headquarters. In any instance of conflict between this site and official publications, official Civil Air Patrol regulations take precedence.
+            </div>
+
+            <!-- Standardized Summary Table -->
             <div class="table-container">
               <table class="cap-table">
                 <thead>
                   <tr>
-                    <th>Award / Milestone</th>
-                    <th>Grade / Rank</th>
-                    <th>Testing Requirements</th>
-                    <th>Notes</th>
+                    <th>Resource Focus</th>
+                    <th>Doctrinal Reference</th>
+                    <th>Intended Application</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>General Billy Mitchell</td>
-                    <td>Cadet Second Lieutenant</td>
-                    <td>Leadership, Aerospace, CPFT</td>
-                    <td>Eligible for collegiate scholarship</td>
+                    <td><strong>Color Guard Drill</strong></td>
+                    <td>CAPP 60-33 / DAFPAM 34-1203</td>
+                    <td>Squadron color guards, cadet competitions, school events</td>
                   </tr>
                   <tr>
-                    <td>Amelia Earhart</td>
-                    <td>Cadet Captain</td>
-                    <td>Comprehensive Leadership &amp; Aerospace</td>
-                    <td>Staff officer milestone</td>
+                    <td><strong>Ceremonial Honor Guard</strong></td>
+                    <td>DAFMAN 34-165 / CAPR 39-1 §9.6</td>
+                    <td>Unit Honor Guard contingents, HGA training, formal ceremonies</td>
                   </tr>
                   <tr>
-                    <td>General Ira C. Eaker</td>
-                    <td>Cadet Lieutenant Colonel</td>
-                    <td>Essay, Speech, Cadet Staff College</td>
-                    <td>Senior cadet phase completion</td>
+                    <td><strong>Equipment &amp; Accouterments</strong></td>
+                    <td>CAPR 900-2 / Vanguard / Glendale</td>
+                    <td>Unit procurement, silver-finish standards, replica rifle details</td>
                   </tr>
                   <tr>
-                    <td>General Carl A. Spaatz</td>
-                    <td>Cadet Colonel</td>
-                    <td>Proctored closed-book exam, PFT</td>
-                    <td>Requires designated proctor</td>
+                    <td><strong>Ceremony Protocols</strong></td>
+                    <td>CAPP 3 Ch. 8 / CAPP 60-33</td>
+                    <td>POW/MIA table, funeral honors support, flag retirement scripts</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
           </section>
         </article>
-
-        <!-- 3. Embedded In-Page Links (Right Rail) -->
-        <aside class="main-links" aria-label="In-page navigation">
-          <h4>Related Links</h4>
-          <br>
-          <ul>
-            <li><a href="#sec1" class="active" aria-current="page">Section 1</a></li>
-            <li><a href="#sec2">Section 2</a></li>
-            <li><a href="#sec3">Section 3</a></li>
-          </ul>
-        </aside>
       </div>
     </main>
   </div>
@@ -116,4 +118,5 @@
   <site-footer></site-footer>
 
 </body>
+
 </html>

@@ -14,24 +14,25 @@ export const NAV_STRUCTURE = [
         href: "/pages/color-guard/color-guard.html",
         children: [
             { title: "Manual of Arms", href: "/pages/color-guard/manual-of-arms.html" },
-            { title: "Posting & Retrieving", href: "/pages/color-guard/manual-of-arms.html" }
+            { title: "Posting & Retrieving", href: "/pages/color-guard/manual-of-arms.html" },
+            { title: "Parades", href: "/pages/color-guard/manual-of-arms.html" }
         ]
     },
     {
         title: "Honor Guard",
         href: "/pages/honor-guard/honor-guard.html",
         children: [
-            { title: "Creed", href: "/pages/honor-guard/creed.html" },
-            { title: "Uniforms", href: "/pages/honor-guard/ceremonial-uniform.html" },
+            { title: "Creed & Motto", href: "/pages/honor-guard/creed.html" },
+            { title: "Ceremonial Uniform", href: "/pages/honor-guard/ceremonial-uniform.html" },
             { title: "Ceremonies", href: "/pages/honor-guard/ceremonies.html" },
             { title: "Exam", href: "/pages/honor-guard/online-exam.html" },
             {
-                title: "HGA",
-                href: "/pages/honor-guard/hga/honor-guard-academy.html",
+                title: "Honor Guard Academy",
+                href: "/pages/honor-guard/honor-guard-academy/about.html",
                 children: [
-                    { title: "Curriculum", href: "/pages/honor-guard/hga/curriculum.html" },
-                    { title: "Cadre & Staff", href: "/pages/honor-guard/hga/cadre.html" },
-                    { title: "Graduation Criteria", href: "/pages/honor-guard/hga/standards.html" }
+                    { title: "Curriculum", href: "/pages/honor-guard/honor-guard-academy/curriculum.html" },
+                    { title: "Cadre & Staff", href: "/pages/honor-guard/honor-guard-academy/cadre.html" },
+                    { title: "Graduation Criteria", href: "/pages/honor-guard/honor-guard-academy/standards.html" }
                 ]
             }
         ]

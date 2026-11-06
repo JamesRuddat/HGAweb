@@ -21,7 +21,7 @@ export class SiteHeader extends HTMLElement {
           // Level 2 Sub-dropdown
           return `
             <li class="dropdown">
-              <a href="${item.href}">${item.title} &#9656;</a>
+              <a href="${item.href}">${item.title}</a>
               <ul class="sub-dropdown">
                 ${this.renderNavItems(item.children, currentPath, true)}
               </ul>
