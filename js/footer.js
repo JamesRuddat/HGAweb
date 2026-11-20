@@ -38,6 +38,12 @@ export class SiteFooter extends HTMLElement {
                 Not to set the standards, but to exceed them!
               </p>
             </div>
+            <div class="footer-col">
+              <h5>Quick Links</h5>
+              <p class="footer-mission">
+                
+              </p>
+            </div>
           </div>
         </div>
 

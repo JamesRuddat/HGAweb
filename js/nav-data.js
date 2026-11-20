@@ -10,6 +10,15 @@ export const NAV_STRUCTURE = [
         ]
     },
     {
+        title: "Drill & Ceremonies",
+        href: "/pages/drill/drill.html",
+        children: [
+            { title: "Manuals", href: "/pages/drill/drill.html" },
+            { title: "History of Drill", href: "/pages/drill/drill.html" },
+            { title: "Errors & Typos", href: "/pages/drill/errors.html" }
+        ]
+    },
+    {
         title: "Color Guard",
         href: "/pages/color-guard/color-guard.html",
         children: [
@@ -23,9 +32,9 @@ export const NAV_STRUCTURE = [
         href: "/pages/honor-guard/honor-guard.html",
         children: [
             { title: "Creed & Motto", href: "/pages/honor-guard/creed.html" },
-            { title: "Ceremonial Uniform", href: "/pages/honor-guard/ceremonial-uniform.html" },
+            { title: "Uniforms", href: "/pages/honor-guard/uniform.html" },
             { title: "Ceremonies", href: "/pages/honor-guard/ceremonies.html" },
-            { title: "Exam", href: "/pages/honor-guard/online-exam.html" },
+            { title: "Exam", href: "/pages/honor-guard/exam.html" },
             {
                 title: "Honor Guard Academy",
                 href: "/pages/honor-guard/honor-guard-academy/about.html",

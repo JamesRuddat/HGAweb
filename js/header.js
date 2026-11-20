@@ -51,7 +51,7 @@ export class SiteHeader extends HTMLElement {
         <div class="container-inner top-banner-content">
           <span class="banner-badge">NOTICE</span>
           <span class="banner-text">
-            This repository is ordained and governed under the authoritative directive, counsel, and venerable wisdom of Ruddat.
+            This repository is ordained and governed under the authoritative directive, counsel, and venerable wisdom of Mr. Ruddat.
           </span>
         </div>
       </div>
@@ -63,7 +63,7 @@ export class SiteHeader extends HTMLElement {
             <img src="/assets/HGA/CAP HG Colored Emblem.png" alt="CAP HG Emblem" class="header-emblem">
             <div class="header-text">
               <h1>Civil Air Patrol Honor Guard</h1>
-              <h3>Unit Program Guide &amp; Training</h3>
+              <h3>Unit Training &amp; Program Guide</h3>
             </div>
           </div>
 
